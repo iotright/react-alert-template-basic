@@ -1,7 +1,7 @@
 {
   "name": "react-alert-template-basic",
   "description": "A simple react alert template - we fork repo from schiehll/react-alert-template-basic",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "IoTRight",
   "main": "dist/cjs/react-alert-template-basic.js",
   "module": "dist/esm/react-alert-template-basic.js",
@@ -30,12 +30,12 @@
     "@babel/eslint-parser": "^7.21.0",
     "@babel/preset-env": "^7.21.0",
     "@babel/preset-react": "^7.21.0",
-    "change-case": "^4.1.2",
-    "rollup": "^3.0.0",
     "@rollup/plugin-babel": "^6.0.0",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.0",
+    "change-case": "^4.1.2",
+    "rollup": "^3.0.0",
     "rollup-plugin-uglify": "^6.0.4",
     "standard": "^17.0.0"
   },
