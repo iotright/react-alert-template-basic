@@ -1,33 +1,33 @@
-const path = require('path')
-const execSync = require('child_process').execSync
-const pascalCase = require('pascal-case')
+const path = require("path");
+const execSync = require("child_process").execSync;
+const changeCase = require("change-case");
 
-process.chdir(path.resolve(__dirname, '..'))
+process.chdir(path.resolve(__dirname, ".."));
 
 const exec = (command, extraEnv) =>
   execSync(command, {
-    stdio: 'inherit',
-    env: Object.assign({}, process.env, extraEnv)
-  })
+    stdio: "inherit",
+    env: Object.assign({}, process.env, extraEnv),
+  });
 
-const packageName = require('../package').name
+const packageName = require("../package").name;
 
-console.log('\nBuilding CommonJS modules...')
+console.log("\nBuilding CommonJS modules...");
 
-exec(`rollup -c scripts/config.js -f cjs -o dist/cjs/${packageName}.js`)
+exec(`rollup -c scripts/config.js -f cjs -o dist/cjs/${packageName}.js`);
 
-console.log('\nBuilding ES modules...')
+console.log("\nBuilding ES modules...");
 
-exec(`rollup -c scripts/config.js -f es -o dist/esm/${packageName}.js`)
+exec(`rollup -c scripts/config.js -f es -o dist/esm/${packageName}.js`);
 
-console.log('\nBuilding UMD modules...')
+console.log("\nBuilding UMD modules...");
 
 exec(`rollup -c scripts/config.js -f umd -o dist/umd/${packageName}.js`, {
-  BUILD_NAME: pascalCase(packageName),
-  BUILD_ENV: 'development'
-})
+  BUILD_NAME: changeCase.pascalCase(packageName),
+  BUILD_ENV: "development",
+});
 
 exec(`rollup -c scripts/config.js -f umd -o dist/umd/${packageName}.min.js`, {
-  BUILD_NAME: pascalCase(packageName),
-  BUILD_ENV: 'production'
-})
+  BUILD_NAME: changeCase.pascalCase(packageName),
+  BUILD_ENV: "production",
+});

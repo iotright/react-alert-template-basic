@@ -1,13 +1,14 @@
 {
   "name": "react-alert-template-basic",
-  "version": "1.0.2",
-  "author": "Reinaldo Schiehll <rn.schiehll@gmail.com>",
+  "description": "A simple react alert template - we fork repo from schiehll/react-alert-template-basic",
+  "version": "1.1.0",
+  "author": "IoTRight",
   "main": "dist/cjs/react-alert-template-basic.js",
   "module": "dist/esm/react-alert-template-basic.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/schiehll/react-alert-template-basic.git"
+    "url": "https://github.com/iotright/react-alert-template-basic.git"
   },
   "keywords": [
     "react",
@@ -20,29 +21,29 @@
   ],
   "scripts": {
     "build": "node ./scripts/build.js",
+    "prepublish": "yarn build",
     "lint": "standard --fix"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.1.2",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "pascal-case": "^2.0.1",
-    "rollup": "^0.53.2",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-commonjs": "^8.2.6",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^2.0.1",
-    "standard": "^10.0.3"
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/eslint-parser": "^7.21.0",
+    "@babel/preset-env": "^7.21.0",
+    "@babel/preset-react": "^7.21.0",
+    "change-case": "^4.1.2",
+    "rollup": "^3.0.0",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "standard": "^17.0.0"
   },
   "peerDependencies": {
-    "react": "^16.2.0 || ^17"
+    "react": "^16.2.0 || ^17 || ^18"
   },
   "standard": {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "ignore": [
       "dist"
     ]
